@@ -8,8 +8,11 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     
+    var eingabe: string;
     
-    var eingabe = prompt("Bitte geben Sie ihren Namen ein :)");
+    eingabe = prompt("Bitte geben Sie ihren Namen ein :)");
     
+    if (eingabe != null); {
     document.body.innerHTML = "Herzlich Willkomen " + eingabe + "!";
+    }
 });

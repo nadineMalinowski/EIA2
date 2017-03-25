@@ -8,7 +8,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     
-    var eingabe: string;
     
     var eingabe = prompt("Bitte geben Sie ihren Namen ein :)");
     

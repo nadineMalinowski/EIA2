@@ -4,7 +4,7 @@
 //Matrikel: 254763
 //Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 document.addEventListener('DOMContentLoaded', function () {
-    var eingabe;
+    var eingabe: string;
     var eingabe = prompt("Bitte geben Sie ihren Namen ein :)");
     document.body.innerHTML = "Herzlich Willkomen " + eingabe + "!";
 });

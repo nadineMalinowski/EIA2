@@ -2,7 +2,7 @@
 //Name: Nadine Malinowski
 //Datum: 09.04.2017
 //Matrikel: 254763
-//Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. 
+//Dieser Code wurde mit Hilfe von Janett St�we und Salome Weißer gelöst. 
 //Variablen deklarieren
 let Nachziehstapel;
 let Handstapel;
@@ -43,6 +43,6 @@ function leereKarten() {
 function KartenAblegen(_event) {
     let element = _event.target;
     Ablagestapel.textContent = element.textContent;
-    element.textContent = ""; //der Inhalt der Handkarte wird gel�scht
+    element.textContent = ""; //der Inhalt der Handkarte wird gelöscht
 }
 //# sourceMappingURL=maumau.js.map

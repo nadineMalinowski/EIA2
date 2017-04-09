@@ -3,7 +3,7 @@
 //Name: Nadine Malinowski
 //Datum: 09.04.2017
 //Matrikel: 254763
-//Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. 
+//Dieser Code wurde mit Hilfe von Janett Stï¿½we und Salome WeiÃŸer gelÃ¶st. 
 
 
    //Variablen deklarieren
@@ -25,7 +25,7 @@
     
         Handstapel = <NodeListOf<HTMLDivElement>>document.getElementsByClassName("KarteAufHand");
     
-        for (let z: number = 0; z < Handstapel.length; z++) { //durchläuft den Handstapel der einzelnen divs
+        for (let z: number = 0; z < Handstapel.length; z++) { //durchlÃ¤uft den Handstapel der einzelnen divs
              Handstapel[z].addEventListener("click", KartenAblegen); 
         }
     
@@ -47,9 +47,9 @@
            }
         }
 
-        function leereKarten(): HTMLDivElement { //findet herraus welche karten leer sind oder ob überhaupt welche leer sind
+        function leereKarten(): HTMLDivElement { //findet herraus welche karten leer sind oder ob Ã¼berhaupt welche leer sind
 
-            for (let i: number = 0; i < Handstapel.length; i++) { //durchläuft die Handkarten divs...
+            for (let i: number = 0; i < Handstapel.length; i++) { //durchlÃ¤uft die Handkarten divs...
                 if (Handstapel[i].textContent === "") { //...wenn Inhalt vorhanden ist
                 return Handstapel[i];
                 }
@@ -62,7 +62,7 @@
     
                 let element: HTMLDivElement = <HTMLDivElement>_event.target;
                 Ablagestapel.textContent = element.textContent; 
-                element.textContent = ""; //der Inhalt der Handkarte wird gelöscht
+                element.textContent = ""; //der Inhalt der Handkarte wird gelÃ¶scht
         }
 
 

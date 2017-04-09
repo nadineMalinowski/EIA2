@@ -47,8 +47,10 @@ document.addEventListener('DOMContentLoaded', function () {
         divList[i].addEventListener("click", differentColor);
                       
         function differentColor (): void { 
+        
             if (divList[i].style.backgroundColor != "red"){
                 divList[i].style.backgroundColor = "red";
+                ergebnis = ergebnis + Number(divList[i].textContent);
             }
             else {
                 if (i % 2 == 0){ 
@@ -57,10 +59,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 else {
                     divList[i].style.backgroundColor  = "white";
                 }
+                ergebnis = ergebnis - Number(divList[i].textContent);
             } 
+            document.getElementById("tooltip").textContent = "Dezimalzahl: " + ergebnis.toString() + " Hexadezimal: " + ergebnis.toString(16);;    
         }               
     }
-        document.getElementById("tooltip").textContent = "Dezimal: ";    
 });
 
 document.addEventListener("mousemove", function(event): void{

@@ -230,7 +230,7 @@ namespace Aufgabe4_Canvas {
         
         //Blumenwiese
             for (var i: number = 0; i < 15; i ++) {
-                let flowerField: number = Math.floor((Math.random()*4) + 0);
+                let flowerField: number = Math.floor((Math.random()*3) + 0);
                 let _x: number = Math.floor(Math.random() * (500-200)) + 200;
                 let _y: number = Math.floor(Math.random() * (700-350)) + 350;
             
@@ -243,7 +243,9 @@ namespace Aufgabe4_Canvas {
                         break;
                     case 2:
                         drawFlower3(_x,_y,"#088A29","#FFBF00","#CC2EFA");
-                        break;   
+                        break; 
+                    default:
+                        break;  
                 }
             }
         }  

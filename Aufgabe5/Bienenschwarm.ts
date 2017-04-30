@@ -294,16 +294,6 @@ namespace Aufgabe5 {
             }
         window.setTimeout(animate, 22);
         }
-        
-        //Anfangsposition der neuen Biene
-        function newBee (_event: Event): void {
-            x.push(558);
-            y.push(420);
-            count ++; 
-        }
-        window.setTimeout(animate, 22);
-        canvas.addEventListener("click", newBee);//Bei Click auf den Canvas erscheint eine neue Biene
-        canvas.addEventListener("touch", newBee);//Bei Touch auf den Canvas erscheint eine neue Biene
 
         function drawFlower1(_x: number, _y: number, _strokeColor: string, _fillColor: string): void {
             //Stängel
@@ -399,6 +389,17 @@ namespace Aufgabe5 {
             crc2.fillStyle = _fillColor2;
             crc2.fill()
         }
+        
+        //Anfangsposition der neuen Biene
+        function newBee (_event: Event): void {
+            x.push(558);
+            y.push(420);
+            count ++; 
+        }
+        
+        window.setTimeout(animate, 22);
+        canvas.addEventListener("click", newBee);//Bei Click auf den Canvas erscheint eine neue Biene
+        canvas.addEventListener("touch", newBee);//Bei Touch auf den Canvas erscheint eine neue Biene
         
         function drawBee(x: number, y: number, _fillColor1: string, _fillColor2: string): void {
             crc2.beginPath();

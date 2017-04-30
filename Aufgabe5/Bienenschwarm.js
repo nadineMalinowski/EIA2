@@ -267,15 +267,6 @@ var Aufgabe5;
             }
             window.setTimeout(animate, 22);
         }
-        //Anfangsposition der neuen Biene
-        function newBee(_event) {
-            x.push(558);
-            y.push(420);
-            count++;
-        }
-        window.setTimeout(animate, 22);
-        canvas.addEventListener("click", newBee); //Bei Click auf den Canvas erscheint eine neue Biene
-        canvas.addEventListener("touch", newBee); //Bei Touch auf den Canvas erscheint eine neue Biene
         function drawFlower1(_x, _y, _strokeColor, _fillColor) {
             //St�ngel
             crc2.beginPath();
@@ -367,6 +358,15 @@ var Aufgabe5;
             crc2.fillStyle = _fillColor2;
             crc2.fill();
         }
+        //Anfangsposition der neuen Biene
+        function newBee(_event) {
+            x.push(558);
+            y.push(420);
+            count++;
+        }
+        window.setTimeout(animate, 22);
+        canvas.addEventListener("click", newBee); //Bei Click auf den Canvas erscheint eine neue Biene
+        canvas.addEventListener("touch", newBee); //Bei Touch auf den Canvas erscheint eine neue Biene
         function drawBee(x, y, _fillColor1, _fillColor2) {
             crc2.beginPath();
             crc2.fillRect(x, y, 3, 9);

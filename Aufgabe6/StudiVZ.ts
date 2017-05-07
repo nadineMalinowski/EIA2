@@ -40,7 +40,7 @@ namespace StudiVZ {
     function saveData(_input: string): string {
         let strArr: string[] = _input.split(","); //Array vom Typ string wird erstellt. Array wird aufgesplitet
         if (strArr.length <= 5 ) {
-            return "Eingabe ist nicht vollstaendig";
+            return "Eingabe ist nicht vollstaendig oder wurde falsch eingegeben.";
         }
         
         let student: StudentData = { 

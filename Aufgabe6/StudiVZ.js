@@ -28,7 +28,7 @@ var StudiVZ;
     function saveData(_input) {
         let strArr = _input.split(","); //Array vom Typ string wird erstellt. Array wird aufgesplitet
         if (strArr.length <= 5) {
-            return "Eingabe ist nicht vollstaendig";
+            return "Eingabe ist nicht vollstaendig oder wurde falsch eingegeben.";
         }
         let student = {
             matrikelNr: parseInt(strArr[0]),

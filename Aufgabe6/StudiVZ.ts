@@ -38,28 +38,32 @@ namespace StudiVZ {
     }
     
     function saveData(_input: string): string {
-        let dataArr: string[] = _input.split(","); //Arry vom Typ string wird erstellt. Array wird aufgesplitet
+        let strArr: string[] = _input.split(","); //Array vom Typ string wird erstellt. Array wird aufgesplitet
+        if (strArr.length <= 5 ) {
+            return "Eingabe ist nicht vollstaendig";
+        }
+        
         let student: StudentData = { 
-            matrikelNr: parseInt(dataArr[0]), //MatrikelNr wird in string umgewandelt
-            name: dataArr[1],
-            firstname: dataArr[2],
-            age: parseInt(dataArr[3]), //age wird in string umgewandelt
-            sex: parseInt(dataArr[4]) == 1, //sex wird in string umgewandelt
-            comment: dataArr[5]
+            matrikelNr: parseInt(strArr[0]), //MatrikelNr wird in string umgewandelt
+            name: strArr[1],
+            firstname: strArr[2],
+            age: parseInt(strArr[3]), //age wird in string umgewandelt
+            sex: parseInt(strArr[4]) == 1, //sex wird in string umgewandelt
+            comment: strArr[5]
          }
 
         let sex: string;
-        if (parseInt(dataArr[4]) == 1) { //wird eine 1 eingegeben -> männlich  
+        if (parseInt(strArr[4]) == 1) { //wird eine 1 eingegeben -> männlich  
             sex = "maennlich";
         }
         else { //wird eine 0 eingegeben -> weiblich                    
             sex = "weiblich";
         }
         
-        students.push(student); //die Daten aus student werden in die studentskartei gepusht, damit ein neuer "Student" ensteht
+        students.push(student); //die Daten aus student werden in die studentskartei gepusht
 
         //Ausgabe
-        return "folgende Daten wurde angelegt:\n" + "\nMatrikelnr.: " + student.matrikelNr + "\nName: " + student.name + "," + student.firstname + "\nAlter: " + student.age + "\nGeschlecht: " + sex + "\nKommentar: " + student.comment;
+        return "Folgende Daten wurde angelegt:\n" + "\nMatrikelnr.: " + student.matrikelNr + "\nName: " + student.name + "," + student.firstname + "\nAlter: " + student.age + "\nGeschlecht: " + sex + "\nKommentar: " + student.comment;
     }
 
     function queryData(_matrikel: number): string {
@@ -69,7 +73,7 @@ namespace StudiVZ {
             if (students[i].matrikelNr == _matrikel) { //überprüft gespeicherte MatrikelNr. Ist gespeicherte MatrikelNr. vorhanden, folgt die Ausgabe
                 let sex: string = students[i].sex ? "maennlich" : "weiblich"; // ? -> if-Anweisung, wurde eine 1 eingegeben -> männlich, wurde eine 0 eingegeben -> weiblich      
                 //Ausgabe
-                return "Gespeicherte Daten zur Matrikelnr.: " + students[i].matrikelNr + "\n\nName: " + students[i].name + "," + students[i].firstname + "\nAlter: " + students[i].age + "\nGeschlecht: " + sex + "\nKommentar: " + students[i].comment;
+                return "Gespeicherte Daten zur Matrikelnr.:" + students[i].matrikelNr + "\n\nName: " + students[i].name + "," + students[i].firstname + "\nAlter: " + students[i].age + "\nGeschlecht: " + sex + "\nKommentar: " + students[i].comment;
             }
             
             else {  

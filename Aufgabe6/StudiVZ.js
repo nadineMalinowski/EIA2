@@ -26,32 +26,35 @@ var StudiVZ;
         }
     }
     function saveData(_input) {
-        let dataArr = _input.split(","); //Arry vom Typ string wird erstellt. Array wird aufgesplitet
+        let strArr = _input.split(","); //Array vom Typ string wird erstellt. Array wird aufgesplitet
+        if (strArr.length <= 5) {
+            return "Eingabe ist nicht vollstaendig";
+        }
         let student = {
-            matrikelNr: parseInt(dataArr[0]),
-            name: dataArr[1],
-            firstname: dataArr[2],
-            age: parseInt(dataArr[3]),
-            sex: parseInt(dataArr[4]) == 1,
-            comment: dataArr[5]
+            matrikelNr: parseInt(strArr[0]),
+            name: strArr[1],
+            firstname: strArr[2],
+            age: parseInt(strArr[3]),
+            sex: parseInt(strArr[4]) == 1,
+            comment: strArr[5]
         };
         let sex;
-        if (parseInt(dataArr[4]) == 1) {
+        if (parseInt(strArr[4]) == 1) {
             sex = "maennlich";
         }
         else {
             sex = "weiblich";
         }
-        students.push(student); //die Daten aus student werden in die studentskartei gepusht, damit ein neuer "Student" ensteht
+        students.push(student); //die Daten aus student werden in die studentskartei gepusht
         //Ausgabe
-        return "folgende Daten wurde angelegt:\n" + "\nMatrikelnr.: " + student.matrikelNr + "\nName: " + student.name + "," + student.firstname + "\nAlter: " + student.age + "\nGeschlecht: " + sex + "\nKommentar: " + student.comment;
+        return "Folgende Daten wurde angelegt:\n" + "\nMatrikelnr.: " + student.matrikelNr + "\nName: " + student.name + "," + student.firstname + "\nAlter: " + student.age + "\nGeschlecht: " + sex + "\nKommentar: " + student.comment;
     }
     function queryData(_matrikel) {
         for (let i = 0; i < students.length; i++) {
             if (students[i].matrikelNr == _matrikel) {
                 let sex = students[i].sex ? "maennlich" : "weiblich"; // ? -> if-Anweisung, wurde eine 1 eingegeben -> m�nnlich, wurde eine 0 eingegeben -> weiblich      
                 //Ausgabe
-                return "Gespeicherte Daten zur Matrikelnr.: " + students[i].matrikelNr + "\n\nName: " + students[i].name + "," + students[i].firstname + "\nAlter: " + students[i].age + "\nGeschlecht: " + sex + "\nKommentar: " + students[i].comment;
+                return "Gespeicherte Daten zur Matrikelnr.:" + students[i].matrikelNr + "\n\nName: " + students[i].name + "," + students[i].firstname + "\nAlter: " + students[i].age + "\nGeschlecht: " + sex + "\nKommentar: " + students[i].comment;
             }
             else {
                 //Ausgabe             

@@ -24,7 +24,6 @@ namespace Aufgabe7_Classes {
         }
         
         setRandomColor(): void {
-            
             let random: number = Math.round(Math.random());
             if (random == 1) {
             this.size = true;

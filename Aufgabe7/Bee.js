@@ -13,9 +13,10 @@ var Aufgabe7_Classes;
             this.color = _color;
         }
         update() {
-            this.x = 558;
-            this.y = 420;
-            this.color = "#FFB300";
+            this.move();
+            this.draw();
+        }
+        setRandomColor() {
             let random = Math.round(Math.random());
             if (random == 1) {
                 this.size = true;

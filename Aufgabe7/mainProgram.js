@@ -207,23 +207,19 @@ var Aufgabe7_Classes;
         f2.drawFlower2();
         let f3 = new Aufgabe7_Classes.Flower(725, 440, "lilaBlume");
         f3.drawFlower3();
-        //Blumenwiese erzeugen
-        let f = new Aufgabe7_Classes.Flower(0, 0, "");
-        f.createRandomFlowerField();
-        console.log(Aufgabe7_Classes.flowers);
         //Blumenwiese
         for (var i = 0; i < 15; i++) {
-            let flowerField = Math.floor((Math.random() * 3) + 0);
-            let _x = Math.floor(Math.random() * (400 - 0)) + 0;
-            let _y = Math.floor(Math.random() * (700 - 350)) + 350;
+            let f = new Aufgabe7_Classes.Flower(0, 0, "");
+            f.setRandomFlowerField();
+            console.log(f);
             Aufgabe7_Classes.flowers[i] = f;
         }
         //Hintergrund speichern
         saveBackground = Aufgabe7_Classes.inhalt.getImageData(0, 0, 1000, 700);
         //Anfangsposition der Bienen
         for (let i = 0; i < count; i++) {
-            let b = new Aufgabe7_Classes.Bee(0, 0, "", true);
-            b.update();
+            let b = new Aufgabe7_Classes.Bee(558, 420, "#FFB300", true);
+            b.setRandomColor();
             Aufgabe7_Classes.bees[i] = b;
         }
         Aufgabe7_Classes.inhalt.canvas.addEventListener("click", newBee); //Bei Click auf den Canvas erscheint eine neue Biene
@@ -234,17 +230,16 @@ var Aufgabe7_Classes;
     function animate() {
         //Hintergrungbild das gespeichert wurde, wird aufgerufen
         Aufgabe7_Classes.inhalt.putImageData(saveBackground, 0, 0);
-        for (let i = 0; i < count; i++) {
+        for (let i = 0; i < Aufgabe7_Classes.bees.length; i++) {
             let b = Aufgabe7_Classes.bees[i];
-            b.move();
-            b.draw();
+            b.update();
         }
         window.setTimeout(animate, 22);
     }
     //Anfangsposition der neuen Biene
     function newBee(_event) {
-        let b = new Aufgabe7_Classes.Bee(0, 0, "", true);
-        b.update();
+        let b = new Aufgabe7_Classes.Bee(558, 420, "#FFB300", true);
+        b.setRandomColor();
         Aufgabe7_Classes.bees.push(b);
         count++;
     }

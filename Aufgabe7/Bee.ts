@@ -19,9 +19,11 @@ namespace Aufgabe7_Classes {
         }
         
         update(): void {
-            this.x = 558;
-            this.y = 420;
-            this.color = "#FFB300";
+            this.move();
+            this.draw();
+        }
+        
+        setRandomColor(): void {
             
             let random: number = Math.round(Math.random());
             if (random == 1) {

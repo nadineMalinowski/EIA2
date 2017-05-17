@@ -15,14 +15,19 @@ namespace Aufgabe7_Classes {
             this.y = _y;
             this.type = _type;
         }
+        
        
-        createRandomFlowerField(): void {
-         //Blumenwiese
-        for (var i: number = 0; i < 15; i++) {
-            let flowerField: number = Math.floor((Math.random() * 3) + 0);
-            this.x = Math.floor(Math.random() * (400 - 0)) + 0;
-            this.y = Math.floor(Math.random() * (700 - 350)) + 350;
-
+        setRandomFlowerField(): void {
+             //Blumenwiese
+                let sort: number = Math.floor((Math.random() * 3) + 0);
+                this.x = Math.floor(Math.random() * (400 - 0)) + 0;
+                this.y = Math.floor(Math.random() * (700 - 350)) + 350;
+                this.type = flowersorts[sort];
+                this.draw();
+        } 
+            
+        draw(): void {
+            let flowerField: number = Math.floor((Math.random() * 3) + 0);  
                 switch (flowerField) {
                     case 0:
                         this.drawFlower1();
@@ -37,7 +42,7 @@ namespace Aufgabe7_Classes {
                         break;
                 }
             }
-        }
+        
         
        drawFlower1(): void {
             //Stängel

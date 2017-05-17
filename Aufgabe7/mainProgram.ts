@@ -223,17 +223,12 @@ namespace Aufgabe7_Classes {
             f2.drawFlower2();
         let f3: Flower = new Flower(725, 440, "lilaBlume");
             f3.drawFlower3();
-        
-        //Blumenwiese erzeugen
-        let f: Flower = new Flower(0, 0, "");
-        f.createRandomFlowerField();
-        console.log(flowers);
        
         //Blumenwiese
         for (var i: number = 0; i < 15; i++) {
-            let flowerField: number = Math.floor((Math.random() * 3) + 0);
-            let _x: number = Math.floor(Math.random() * (400 - 0)) + 0;
-            let _y: number = Math.floor(Math.random() * (700 - 350)) + 350;
+            let f: Flower = new Flower(0, 0, "");
+            f.setRandomFlowerField();
+            console.log(f);
             flowers[i] = f;   
         }
 
@@ -242,8 +237,8 @@ namespace Aufgabe7_Classes {
         
         //Anfangsposition der Bienen
         for (let i: number = 0; i < count; i++) {
-            let b: Bee = new Bee(0, 0, "", true);
-                b.update();
+            let b: Bee = new Bee(558, 420, "#FFB300", true);
+                b.setRandomColor();
             bees[i] = b;
         }     
         inhalt.canvas.addEventListener("click", newBee);//Bei Click auf den Canvas erscheint eine neue Biene
@@ -256,18 +251,17 @@ namespace Aufgabe7_Classes {
     function animate(): void {
         //Hintergrungbild das gespeichert wurde, wird aufgerufen
         inhalt.putImageData(saveBackground, 0, 0);
-        for (let i: number = 0; i < count; i++) {
+        for (let i: number = 0; i < bees.length; i++) {
             let b: Bee = bees [i];
-                b.move();
-                b.draw();
+                b.update();
         }
         window.setTimeout(animate, 22);
     }
 
     //Anfangsposition der neuen Biene
     function newBee(_event: Event): void { 
-        let b: Bee = new Bee ( 0, 0, "", true);
-            b.update();
+        let b: Bee = new Bee ( 558, 420, "#FFB300", true);
+            b.setRandomColor();
         bees.push(b);
         count++;
     }

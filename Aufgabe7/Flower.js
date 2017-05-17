@@ -11,25 +11,28 @@ var Aufgabe7_Classes;
             this.y = _y;
             this.type = _type;
         }
-        createRandomFlowerField() {
+        setRandomFlowerField() {
             //Blumenwiese
-            for (var i = 0; i < 15; i++) {
-                let flowerField = Math.floor((Math.random() * 3) + 0);
-                this.x = Math.floor(Math.random() * (400 - 0)) + 0;
-                this.y = Math.floor(Math.random() * (700 - 350)) + 350;
-                switch (flowerField) {
-                    case 0:
-                        this.drawFlower1();
-                        break;
-                    case 1:
-                        this.drawFlower2();
-                        break;
-                    case 2:
-                        this.drawFlower3();
-                        break;
-                    default:
-                        break;
-                }
+            let sort = Math.floor((Math.random() * 3) + 0);
+            this.x = Math.floor(Math.random() * (400 - 0)) + 0;
+            this.y = Math.floor(Math.random() * (700 - 350)) + 350;
+            this.type = Aufgabe7_Classes.flowersorts[sort];
+            this.draw();
+        }
+        draw() {
+            let flowerField = Math.floor((Math.random() * 3) + 0);
+            switch (flowerField) {
+                case 0:
+                    this.drawFlower1();
+                    break;
+                case 1:
+                    this.drawFlower2();
+                    break;
+                case 2:
+                    this.drawFlower3();
+                    break;
+                default:
+                    break;
             }
         }
         drawFlower1() {

@@ -107,16 +107,16 @@ namespace FormElements {
     //Zeigt ausgewählte Produkte mit ihren Preisen in der Bestellübersicht an
     function changeWarenuebersicht(_summe: number): void {
         let BestellungUebersicht: HTMLElement = document.getElementById("Warenuebersicht");
-        BestellungUebersicht.innerText = "";
+            BestellungUebersicht.innerText = "";
         
         for (let i: number = 0; i < inputsEis.length; i++) {
             if(parseInt(inputsEis[i].value) > 0){
-             BestellungUebersicht.innerText += Eissorten[i] + " " + (parseInt(inputsEis[i].value)*1) + "Euro" + "\n";
+                BestellungUebersicht.innerText += Eissorten[i] + " " + (parseInt(inputsEis[i].value)*1) + "Euro" + "\n";
             }
         }
         for (let i: number = 0; i < inputsZusaetze.length; i++) {
             if(inputsZusaetze[i].checked){
-            BestellungUebersicht.innerText += zusaetze[i] + " 0.30 Euro" + "\n";
+                BestellungUebersicht.innerText += zusaetze[i] + " 0.30 Euro" + "\n";
             }
         } 
         //Summe wird in HTML geschrieben
@@ -144,61 +144,61 @@ namespace FormElements {
         
         //Name
         let Name: HTMLInputElement = <HTMLInputElement> document.getElementById("Name");
-        if(Name.validity.valid == false)
-            Pruefung.push("Name \n");
+            if (Name.validity.valid == false)
+                Pruefung.push("Name \n");
         
         //Vorname
         let Vorname: HTMLInputElement = <HTMLInputElement> document.getElementById("Vorname");
-          if(Vorname.validity.valid == false)
-            Pruefung.push("Vorname \n");
+            if (Vorname.validity.valid == false)
+                Pruefung.push("Vorname \n");
         
         //Straße
         let Strasse: HTMLInputElement = <HTMLInputElement> document.getElementById("Strasse");
-        if(Strasse.validity.valid == false)
-            Pruefung.push("Strasse \n");
+            if (Strasse.validity.valid == false)
+                Pruefung.push("Strasse \n");
         
         //Ort, PLZ
         let OrtPLZ: HTMLInputElement = <HTMLInputElement> document.getElementById("Ort,PLZ");
-           if(OrtPLZ.validity.valid == false)
-            Pruefung.push("Ort, PLZ \n");
+            if (OrtPLZ.validity.valid == false)
+                Pruefung.push("Ort, PLZ \n");
         
         //Email
         let Mail: HTMLInputElement = <HTMLInputElement> document.getElementById("Email");
-        if(Mail.validity.valid == false)
-            Pruefung.push("Email \n");
+            if (Mail.validity.valid == false)
+                Pruefung.push("Email \n");
         
         //Eiskugeln
         let Eiskugeln: number = 0;
-        for(let i: number = 0; i < inputsEis.length; i++){
+        for (let i: number = 0; i < inputsEis.length; i++) {
             if(parseInt(inputsEis[i].value) > 0)
                 Eiskugeln += 1;
         } 
-        if(Eiskugeln == 0)
+        if (Eiskugeln == 0)
             Pruefung.push("Eissorten\n");
         
         //Zusaetze
         let Zusaetze: number = 0;
-        for(let i: number = 0; i < inputsZusaetze.length; i++){
-            if(inputsZusaetze[i].checked)
+        for (let i: number = 0; i < inputsZusaetze.length; i++) {
+            if (inputsZusaetze[i].checked)
                 Zusaetze += 1;
         } 
-        if(Zusaetze == 0)
+        if (Zusaetze == 0)
             Pruefung.push("Zusaetze\n");
         
         //Darreichungsform
         let Darreichung: number = 0;
-        for(let i: number = 0; i < inputsDarreichung.length; i++){
-            if(inputsDarreichung[i].checked)
+        for (let i: number = 0; i < inputsDarreichung.length; i++) {
+            if (inputsDarreichung[i].checked)
                 Darreichung += 1;
         } 
-        if(Darreichung == 0)
+        if (Darreichung == 0)
             Pruefung.push("Darreichungsform");
        
-        if(Pruefung.length > 0){
-            for(let i: number = 0; i < Pruefung.length; i++)
-                Pruefung.push
-            alert(Pruefung.join(""));}
-        else{
+        if (Pruefung.length > 0) {
+        for (let i: number = 0; i < Pruefung.length; i++)
+            Pruefung.push
+            alert (Pruefung.join(""));}
+        else {
             alert("Vielen Dank fuer Ihre Bestellung! :)");
         }
     }   

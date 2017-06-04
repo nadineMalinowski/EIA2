@@ -101,8 +101,13 @@ var FormElements;
                 BestellungUebersicht.innerText += zusaetze[i] + " 0.30 Euro" + "\n";
             }
         }
+        for (let i = 0; i < inputsDarreichung.length; i++) {
+            if (inputsDarreichung[i].checked) {
+                BestellungUebersicht.innerText += Darreichungsform[i] + "\n";
+            }
+        }
         //Summe wird in HTML geschrieben
-        let summeHtml = document.getElementById("Gesamtsumme");
+        let summeHtml = document.getElementById("Summe");
         summeHtml.innerText = _summe.toString() + " Euro";
     }
     function change() {

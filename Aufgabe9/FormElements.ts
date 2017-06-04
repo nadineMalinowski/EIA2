@@ -114,13 +114,21 @@ namespace FormElements {
                 BestellungUebersicht.innerText += Eissorten[i] + " " + (parseInt(inputsEis[i].value)*1) + "Euro" + "\n";
             }
         }
+        
         for (let i: number = 0; i < inputsZusaetze.length; i++) {
             if(inputsZusaetze[i].checked){
                 BestellungUebersicht.innerText += zusaetze[i] + " 0.30 Euro" + "\n";
             }
-        } 
+        }
+        
+        for (let i: number = 0; i < inputsDarreichung.length; i++) {
+            if (inputsDarreichung[i].checked) {
+                BestellungUebersicht.innerText += Darreichungsform[i] + "\n";
+            }
+        }
+        
         //Summe wird in HTML geschrieben
-        let summeHtml: HTMLElement = document.getElementById("Gesamtsumme");
+        let summeHtml: HTMLElement = document.getElementById("Summe");
         summeHtml.innerText = _summe.toString() + " Euro";   
     } 
     

@@ -122,24 +122,49 @@ var FormElements;
         let Pruefung = ["Bitte folgende Eingaben ueberpruefen! \n"];
         //Name
         let Name = document.getElementById("Name");
-        if (Name.validity.valid == false)
+        if (Name.validity.valid == false) {
             Pruefung.push("Name \n");
+            Name.style.backgroundColor = "#FA5858";
+        }
+        else {
+            Name.style.backgroundColor = "white";
+        }
         //Vorname
         let Vorname = document.getElementById("Vorname");
-        if (Vorname.validity.valid == false)
+        if (Vorname.validity.valid == false) {
             Pruefung.push("Vorname \n");
+            Vorname.style.backgroundColor = "#FA5858";
+        }
+        else {
+            Vorname.style.backgroundColor = "white";
+        }
         //Stra�e
         let Strasse = document.getElementById("Strasse");
-        if (Strasse.validity.valid == false)
+        if (Strasse.validity.valid == false) {
             Pruefung.push("Strasse \n");
+            Strasse.style.backgroundColor = "#FA5858";
+        }
+        else {
+            Strasse.style.backgroundColor = "white";
+        }
         //Ort, PLZ
         let OrtPLZ = document.getElementById("Ort,PLZ");
-        if (OrtPLZ.validity.valid == false)
+        if (OrtPLZ.validity.valid == false) {
             Pruefung.push("Ort, PLZ \n");
+            OrtPLZ.style.backgroundColor = "#FA5858";
+        }
+        else {
+            OrtPLZ.style.backgroundColor = "white";
+        }
         //Email
         let Mail = document.getElementById("Email");
-        if (Mail.validity.valid == false)
+        if (Mail.validity.valid == false) {
             Pruefung.push("Email \n");
+            Mail.style.backgroundColor = "#FA5858";
+        }
+        else {
+            Mail.style.backgroundColor = "white";
+        }
         //Eiskugeln
         let Eiskugeln = 0;
         for (let i = 0; i < inputsEis.length; i++) {

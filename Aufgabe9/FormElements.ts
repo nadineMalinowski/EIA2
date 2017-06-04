@@ -144,28 +144,53 @@ namespace FormElements {
         
         //Name
         let Name: HTMLInputElement = <HTMLInputElement> document.getElementById("Name");
-            if (Name.validity.valid == false)
-                Pruefung.push("Name \n");
+            if (Name.validity.valid == false) {
+                 Pruefung.push("Name \n");
+                Name.style.backgroundColor = "#FA5858";
+                }
+           else {
+                Name.style.backgroundColor = "white";
+        }
         
         //Vorname
         let Vorname: HTMLInputElement = <HTMLInputElement> document.getElementById("Vorname");
-            if (Vorname.validity.valid == false)
-                Pruefung.push("Vorname \n");
+            if (Vorname.validity.valid == false) {
+                Pruefung.push("Vorname \n")
+                Vorname.style.backgroundColor = "#FA5858";
+                }
+           else {
+                Vorname.style.backgroundColor = "white";
+        }
         
         //Straﬂe
         let Strasse: HTMLInputElement = <HTMLInputElement> document.getElementById("Strasse");
-            if (Strasse.validity.valid == false)
+            if (Strasse.validity.valid == false) {
                 Pruefung.push("Strasse \n");
+                 Strasse.style.backgroundColor = "#FA5858";
+                }
+           else {
+                Strasse.style.backgroundColor = "white";
+        }
         
         //Ort, PLZ
         let OrtPLZ: HTMLInputElement = <HTMLInputElement> document.getElementById("Ort,PLZ");
-            if (OrtPLZ.validity.valid == false)
+            if (OrtPLZ.validity.valid == false) {
                 Pruefung.push("Ort, PLZ \n");
+                OrtPLZ.style.backgroundColor = "#FA5858";
+                }
+           else {
+                OrtPLZ.style.backgroundColor = "white";
+        }
         
         //Email
         let Mail: HTMLInputElement = <HTMLInputElement> document.getElementById("Email");
-            if (Mail.validity.valid == false)
+            if (Mail.validity.valid == false) {
                 Pruefung.push("Email \n");
+                Mail.style.backgroundColor = "#FA5858";
+                }
+           else {
+                Mail.style.backgroundColor = "white";
+        }
         
         //Eiskugeln
         let Eiskugeln: number = 0;

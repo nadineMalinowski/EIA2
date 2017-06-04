@@ -1,0 +1,78 @@
+<!--
+Aufgabe: 9-FormElements
+Name: Nadine Malinowski
+Datum: 04.06.2017
+Matrikel: 254763
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>FormElements</title>
+<link rel="stylesheet" href="FormElements.css" type="text/css" media="screen"/>
+<script src="FormElements.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+	<header>
+		<h1>Nadi´s Eisshop</h1>
+	</header>
+	
+	<main>
+		<img alt="Eis" src="Eis.jpg">	
+		<div>
+			<!-- Darreichnugsfotm -->
+			<fieldset id="Darreichungsform">
+				<legend> Darreichungsform </legend>
+			</fieldset>
+	
+			<!-- Eissorten -->
+			<fieldset id="Eissorten">
+				<legend> Eissorten - je 1€ </legend>
+			</fieldset>
+		</div>
+		<div>
+			<!-- Zusätze -->
+			<fieldset id="Zusaetze">
+			<legend> Zusätze - je 0.30€ </legend>
+			</fieldset>
+	
+			<!-- Lieferoptionen -->
+			<fieldset id="Lieferoptionen">
+				<legend> Lieferoptionen </legend>
+				<select name="Lieferoptionen" id="Lieferoptionen">
+				<option value="Standard">Standard</option>
+				<option value="Express">Express</option> 
+				</select>
+			</fieldset>
+	
+			<!--Bestelluebersicht -->
+			<fieldset id="Bestelluebersicht">
+				<legend> Bestelluebersicht </legend>
+				<p id="Warenuebersicht"></p>
+				<h4>Gesamtsumme:</h4>
+				<p id="Gesamtsumme"></p>
+       		</fieldset>
+	
+			<!-- Kontaktdaten -->
+			<fieldset id="Kontaktdaten">
+				<legend> Kontaktdaten </legend>
+				Name
+				<input type="text" name="Name" placeholder="Bitte eingeben" required id="Name"/>
+				Vorname
+				<input type="text" name="Vorname" placeholder="Bitte eingeben" required id="Vorname"/>
+				Straße
+				<input type="text" name="Straße" placeholder="Bitte eingeben" required id="Strasse"/>
+				Ort,PLZ
+				<input type="text" name="Ort, PLZ" placeholder="Bitte eingeben" required id="Ort,PLZ"/>
+				Mail
+				<input type="email" name="Mail" placeholder="Kann eingegeben werden" id="Email"/>
+			</fieldset>
+	
+			<button name="Bestellbutton" type="button" id="BestellungAbschicken">Bestellung prüfen und abschicken!</button>
+		</div>
+	</main>
+</body>	

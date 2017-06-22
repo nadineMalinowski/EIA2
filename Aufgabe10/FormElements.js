@@ -7,7 +7,7 @@ var FormElements;
 (function (FormElements) {
     window.addEventListener("load", init);
     //Array aller Eissorten
-    let Eissorten = ["Erdbeere", "Zirtone", "Vanille", "Schokolade", "Nuss", "Melone", "Joghurt", "Banane", "Kuerbis", "Minze", "Cookie"];
+    let Eissorten = ["Erdbeere", "Zitrone", "Vanille", "Schokolade", "Nuss", "Melone", "Joghurt", "Banane", "Kuerbis", "Minze", "Cookie"];
     let inputsEis = [];
     //Array aller Zusaetze
     let zusaetze = ["Sahne", "Vanillesosse", "Schokososse", "Streusel"];
@@ -50,6 +50,7 @@ var FormElements;
         input.min = "0";
         input.max = "20";
         input.value = "0";
+        input.name = _Eissorte;
         label.id = _Eissorte;
         Eis.appendChild(label);
         inputsEis.push(input);
@@ -66,6 +67,8 @@ var FormElements;
         label.innerText = _Checkboxen;
         label.appendChild(input);
         input.type = "checkbox"; //Art des Inputs
+        input.name = "Zusaetze";
+        input.value = _Checkboxen;
         label.id = _Checkboxen;
         Zusaetze.appendChild(label);
         inputsZusaetze.push(input);
@@ -82,7 +85,8 @@ var FormElements;
         label.innerText = _Radiobutton;
         label.appendChild(input);
         input.type = "radio"; //Art des Inputs
-        input.name = "Radiobutton";
+        input.name = "Darreichungsform";
+        input.value = _Radiobutton;
         label.id = _Radiobutton;
         Darreichung.appendChild(label);
         inputsDarreichung.push(input);

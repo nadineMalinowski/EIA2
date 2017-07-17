@@ -218,7 +218,7 @@ namespace Aufgabe8_Inheritance {
         
         //Blumenwiese
         //Tulpe - werden von Honigbienen angeflogen
-        for (var i: number = 0; i < 10; i++) {
+        for (let i: number = 0; i < 10; i++) {
             let t: Tulpe = new Tulpe();
             flowers.push(t);
             console.log(t);
@@ -226,7 +226,7 @@ namespace Aufgabe8_Inheritance {
         }
         
         //Pusteblume
-        for (var i: number = 0; i < 10; i++) {
+        for (let i: number = 0; i < 10; i++) {
             let p: Pusteblume = new Pusteblume();
             console.log(p);
             p.draw();

@@ -14,13 +14,7 @@ namespace Aufgabe8_Inheritance {
         constructor(_x: number, _y: number, _color: string, _size: boolean) {
             super(_x, _y, _color, _size);
                 this.speed = 0.02;
-                this.setStartPosition();
                 this.setRandomFlowerTarget();
-        }
-
-        setStartPosition(): void {
-            this.x = 558;
-            this.y = 420;
         }
         
         setRandomFlowerTarget(): void {

@@ -59,7 +59,7 @@ namespace Abschlussarbeit {
             console.log(findPositionx);
             console.log(findPositiony);
 
-            //rechnet die Differenz zwischen der Klickposition und der Position des Regentropfens aus
+            //rechnet die Differenz zwischen der Klickposition und die Position des Regentropfens aus
             let gapx: number = Math.abs(r.momentaryX - findPositionx);
             let gapy: number = Math.abs(r.momentaryY - findPositiony);
             if (gapx <= 20 && gapy <= 20) {
@@ -92,14 +92,14 @@ namespace Abschlussarbeit {
 
     //erzeugt neue Regentropfen und Schneeflocken 
     function generateRaindropSnowflake(): void {
-        n++//zählt wie oft die Animationsfunktion aufgerufen wurde
-        if (n > 24 && n < 26) {//wenn die Animation 25 mal aufgerufen wurde
-            let newRaindrop: raindrop = new raindrop();//erstellt es einen neuen Regentropfen
+        n++
+        if (n > 24 && n < 26) {
+            let newRaindrop: raindrop = new raindrop();
             rain.push(newRaindrop);
 
             let newSnowflake: snowflake = new snowflake();
             snow.push(newSnowflake);
-            n = 0;//fängt wieder bei 0 an zu zählen
+            n = 0;
         }
     }
 

@@ -41,7 +41,7 @@ var Abschlussarbeit;
             let findPositiony = event.clientY;
             console.log(findPositionx);
             console.log(findPositiony);
-            //rechnet die Differenz zwischen der Klickposition und der Position des Regentropfens aus
+            //rechnet die Differenz zwischen der Klickposition und die Position des Regentropfens aus
             let gapx = Math.abs(r.momentaryX - findPositionx);
             let gapy = Math.abs(r.momentaryY - findPositiony);
             if (gapx <= 20 && gapy <= 20) {
@@ -68,13 +68,13 @@ var Abschlussarbeit;
     }
     //erzeugt neue Regentropfen und Schneeflocken 
     function generateRaindropSnowflake() {
-        n++; //z�hlt wie oft die Animationsfunktion aufgerufen wurde
+        n++;
         if (n > 24 && n < 26) {
-            let newRaindrop = new Abschlussarbeit.raindrop(); //erstellt es einen neuen Regentropfen
+            let newRaindrop = new Abschlussarbeit.raindrop();
             Abschlussarbeit.rain.push(newRaindrop);
             let newSnowflake = new Abschlussarbeit.snowflake();
             Abschlussarbeit.snow.push(newSnowflake);
-            n = 0; //f�ngt wieder bei 0 an zu z�hlen
+            n = 0;
         }
     }
     //Spieler gewinnt das Spiel bei 40 Klicks

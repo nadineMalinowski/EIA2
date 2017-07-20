@@ -1,13 +1,17 @@
 /// <reference path="main.ts" />
 
+//Aufgabe: Abschlussarbeit
+//Name: Nadine Malinowski
+//Datum: 20.07.2017
+//Matrikel: 254763
+//Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+
 namespace Abschlussarbeit {
     export class raindrop {
         x: number;
         y: number;
         momentaryPosX: number;
         momentaryPosY: number;
-        counter: number = 0;
-        speed: number = 0;
 
         constructor() {
             this.startPosition();

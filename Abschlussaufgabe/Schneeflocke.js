@@ -1,4 +1,9 @@
 /// <reference path="Regentropfen.ts" />
+//Aufgabe: Abschlussarbeit
+//Name: Nadine Malinowski
+//Datum: 20.07.2017
+//Matrikel: 254763
+//Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 var Abschlussarbeit;
 (function (Abschlussarbeit) {
     class snowflake extends Abschlussarbeit.raindrop {

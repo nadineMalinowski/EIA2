@@ -1,6 +1,11 @@
 /// <reference path="Regentropfen.ts" />
 /// <reference path="Schneeflocke.ts" />
 /// <reference path="hintergrund.ts" />
+//Aufgabe: Abschlussarbeit
+//Name: Nadine Malinowski
+//Datum: 20.07.2017
+//Matrikel: 254763
+//Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 var Abschlussarbeit;
 (function (Abschlussarbeit) {
     let image;
@@ -8,9 +13,6 @@ var Abschlussarbeit;
     let s = 0;
     let n = 0;
     window.addEventListener("load", init);
-    let highscore = document.createElement("div");
-    highscore.style.fontSize = "40px";
-    document.body.appendChild(highscore);
     function init(_event) {
         Abschlussarbeit.canvas = document.getElementsByTagName("canvas")[0];
         Abschlussarbeit.crc2 = Abschlussarbeit.canvas.getContext("2d");
@@ -42,7 +44,7 @@ var Abschlussarbeit;
             //rechnet die Differenz zwischen der Klickposition und der Position des Regentropfens aus
             let gapx = Math.abs(r.momentaryPosX - findPositionx);
             let gapy = Math.abs(r.momentaryPosY - findPositiony);
-            if (gapx <= 20 && gapy <= 20) {
+            if (gapx <= 40 && gapy <= 40) {
                 Abschlussarbeit.rain.splice(i, 1); //entfernt Regentropfen aus dem Array, somit wird er gel�scht
                 Abschlussarbeit.rain.reverse();
             }
@@ -59,6 +61,7 @@ var Abschlussarbeit;
         for (let i = 0; i < Abschlussarbeit.snow.length; i++) {
             Abschlussarbeit.snow[i].update();
         }
+        wonGame();
         bankingRaindropSnowflake();
         endGame();
         window.setTimeout(animate, 20);
@@ -74,6 +77,12 @@ var Abschlussarbeit;
             n = 0; //f�ngt wieder bei 0 an zu z�hlen
         }
     }
+    //Spieler gewinnt das Spiel bei 85 Klicks
+    function wonGame() {
+        if (s > 84) {
+            alert("Glueckwunsch du hast die gewuenschte Anzahl an Regen entfernt und gewonnen!\nUm es noch mal zu spielen, druecke F5 oder aktualisiere das Programm.");
+        }
+    }
     //beendet das Spiel, indem der Regentropfen auf den Boden f�llt
     function endGame() {
         for (let i = 0; i < Abschlussarbeit.rain.length; i++) {
@@ -83,15 +92,13 @@ var Abschlussarbeit;
             }
         }
     }
-    // Highscore welcher Anzahl Ameisen vernichtet + einzelner Ameisen Arten vernichtet hochz�hlt
-    highscore.innerText = "Zerstoerte Regentropfen: " + s;
     //Erkl�rt was zu tun ist
     function explainGame() {
         alert("Rette die Schneelandschaft, indem du die Regentropfen durch clicken zerstoerst. \nAchtung, die Regentropfen duerfen nicht den Boden beruehren!");
     }
     //Meldung das Spiel verlohren ist
     function gameLost() {
-        alert("Oh nein, du hast leider die Schneelandschaft nicht retten koennen.\nUm es noch mal zu probieren, starte das Programm neu.");
+        alert("Oh nein, du hast leider die Schneelandschaft nicht retten koennen.\nUm es noch mal zu probieren, druecke F5 oder aktualisiere das Programm.");
     }
 })(Abschlussarbeit || (Abschlussarbeit = {}));
 //# sourceMappingURL=main.js.map

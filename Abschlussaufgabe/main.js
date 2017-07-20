@@ -44,8 +44,9 @@ var Abschlussarbeit;
             //rechnet die Differenz zwischen der Klickposition und der Position des Regentropfens aus
             let gapx = Math.abs(r.momentaryPosX - findPositionx);
             let gapy = Math.abs(r.momentaryPosY - findPositiony);
-            if (gapx <= 40 && gapy <= 40) {
-                Abschlussarbeit.rain.splice(i, 1); //entfernt Regentropfen aus dem Array, somit wird er gel�scht
+            if (gapx <= 20 && gapy <= 20) {
+                Abschlussarbeit.rain.splice(i, 1);
+                //entfernt Regentropfen aus dem Array, somit wird er gel�scht
                 Abschlussarbeit.rain.reverse();
             }
         }
@@ -92,7 +93,7 @@ var Abschlussarbeit;
             }
         }
     }
-    //Erkl�rt was zu tun ist
+    //erkl�rt was zu tun ist
     function explainGame() {
         alert("Rette die Schneelandschaft, indem du die Regentropfen durch clicken zerstoerst. \nAchtung, die Regentropfen duerfen nicht den Boden beruehren!");
     }

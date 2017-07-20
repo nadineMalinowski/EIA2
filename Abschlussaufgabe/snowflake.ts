@@ -1,4 +1,4 @@
-/// <reference path="Regentropfen.ts" />
+/// <reference path="raindrop.ts" />
 
 //Aufgabe: Abschlussarbeit
 //Name: Nadine Malinowski

@@ -1,6 +1,6 @@
-/// <reference path="Regentropfen.ts" />
-/// <reference path="Schneeflocke.ts" />
-/// <reference path="hintergrund.ts" />
+/// <reference path="raindrop.ts" />
+/// <reference path="snowflake.ts" />
+/// <reference path="background.ts" />
 
 //Aufgabe: Abschlussarbeit
 //Name: Nadine Malinowski
@@ -16,11 +16,11 @@ namespace Abschlussarbeit {
     export let snow: snowflake[];
     let image: ImageData;
     let count: number = Math.random() * 5; //variable Zahl bis 5
-    let s: number = 0;
+    let w: number = 0;//um das Spiel zu gewinnen
     let n: number = 0;
 
     window.addEventListener("load", init);
-    
+
     function init(_event: Event): void {
         canvas = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d");
@@ -32,7 +32,7 @@ namespace Abschlussarbeit {
         let background: Hintergrund = new Hintergrund();//Hintergrund aufrufen
 
         canvas.addEventListener("click", click);
-        canvas.addEventListener("touchstart", click);
+        canvas.addEventListener("touch", click);
 
         //erstellt Regen und Schnee
         for (let i: number = 0; i < count; i++) {
@@ -53,18 +53,17 @@ namespace Abschlussarbeit {
         for (let i: number = 0; i < rain.length; i++) {
             let r: raindrop = rain[i];
 
-            //findet die Position des klicks herraus
+            //findet die Position des Klicks herraus
             let findPositionx: number = event.clientX;
             let findPositiony: number = event.clientY;
             console.log(findPositionx);
             console.log(findPositiony);
 
             //rechnet die Differenz zwischen der Klickposition und der Position des Regentropfens aus
-            let gapx: number = Math.abs(r.momentaryPosX - findPositionx);
-            let gapy: number = Math.abs(r.momentaryPosY - findPositiony);
+            let gapx: number = Math.abs(r.momentaryX - findPositionx);
+            let gapy: number = Math.abs(r.momentaryY - findPositiony);
             if (gapx <= 20 && gapy <= 20) {
-                rain.splice(i, 1);
-                //entfernt Regentropfen aus dem Array, somit wird er gelöscht
+                rain.splice(i, 1);//entfernt Regentropfen aus dem Array, somit wird er gelöscht
                 rain.reverse();
             }
         }
@@ -84,15 +83,15 @@ namespace Abschlussarbeit {
             snow[i].update();
         }
 
+        generateRaindropSnowflake();
         wonGame();
-        bankingRaindropSnowflake();
         endGame();
 
         window.setTimeout(animate, 20);
     }
 
-    //Schiebt neue Regentropfen und Schneeflocken nach
-    function bankingRaindropSnowflake(): void {
+    //erzeugt neue Regentropfen und Schneeflocken 
+    function generateRaindropSnowflake(): void {
         n++//zählt wie oft die Animationsfunktion aufgerufen wurde
         if (n > 24 && n < 26) {//wenn die Animation 25 mal aufgerufen wurde
             let newRaindrop: raindrop = new raindrop();//erstellt es einen neuen Regentropfen
@@ -104,9 +103,9 @@ namespace Abschlussarbeit {
         }
     }
 
-    //Spieler gewinnt das Spiel bei 85 Klicks
+    //Spieler gewinnt das Spiel bei 40 Klicks
     function wonGame(): void {
-        if (s > 84) {
+        if (w > 39) {
             alert("Glueckwunsch du hast die gewuenschte Anzahl an Regen entfernt und gewonnen!\nUm es noch mal zu spielen, druecke F5 oder aktualisiere das Programm.");
         }
     }
@@ -115,19 +114,20 @@ namespace Abschlussarbeit {
     function endGame(): void {
         for (let i: number = 0; i < rain.length; i++) {
             let o: raindrop = rain[i];
-            if (o.momentaryPosY >= 620 && o.momentaryPosY <= 750) {
+            if (o.momentaryY >= 620 && o.momentaryY <= 750) {
                 gameLost();
             }
         }
     }
 
-    //erklärt was zu tun ist
+    //Erklärung des Spiels
     function explainGame(): void {
         alert("Rette die Schneelandschaft, indem du die Regentropfen durch clicken zerstoerst. \nAchtung, die Regentropfen duerfen nicht den Boden beruehren!");
     }
 
     //Meldung das Spiel verlohren ist
     function gameLost(): void {
-        alert("Oh nein, du hast leider die Schneelandschaft nicht retten koennen.\nUm es noch mal zu probieren, druecke F5 oder aktualisiere das Programm.");
+        alert("Oh nein, du hast leider die Schneelandschaft nicht retten koennen.\nUm es nochmal zu probieren, druecke ok.");
+        location.reload();//Spiel wird neu geladen
     }
 }

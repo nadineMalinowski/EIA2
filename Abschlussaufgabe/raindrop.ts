@@ -10,8 +10,8 @@ namespace Abschlussarbeit {
     export class raindrop {
         x: number;
         y: number;
-        momentaryPosX: number;
-        momentaryPosY: number;
+        momentaryX: number;
+        momentaryY: number;
 
         constructor() {
             this.startPosition();
@@ -20,7 +20,7 @@ namespace Abschlussarbeit {
         update(): void {
             this.move();
             this.draw();
-            this.momentary()
+            this.momentaryPos()
         }
 
         //legt die Startposition fest
@@ -29,15 +29,15 @@ namespace Abschlussarbeit {
             this.y = 130;
         }
 
-        //findet momentane Position des Regentropfens herraus
-        momentary(): void {
-            this.momentaryPosX = this.x;
-            this.momentaryPosY = this.y;
-        }
-
         move(): void {
             this.x += Math.random() * 2 - 1;
             this.y += Math.random() * 4 - 0;
+        }
+        
+        //findet momentane Position des Regentropfens herraus
+        momentaryPos(): void {
+            this.momentaryX = this.x;
+            this.momentaryY = this.y;
         }
 
         draw(): void {

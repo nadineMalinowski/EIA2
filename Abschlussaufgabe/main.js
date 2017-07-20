@@ -80,7 +80,7 @@ var Abschlussarbeit;
     }
     //Spieler gewinnt das Spiel bei 40 Klicks
     function wonGame() {
-        if (w > 7) {
+        if (w > 39) {
             alert("Glueckwunsch du hast die gewuenschte Anzahl an Regentropfen entfernt und gewonnen!\nUm es nochmal zu spielen, druecke auf ok.");
             location.reload(); //Spiel wird neu geladen
         }

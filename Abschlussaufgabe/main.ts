@@ -16,7 +16,7 @@ namespace Abschlussarbeit {
     export let snow: snowflake[];
     let image: ImageData;
     let count: number = Math.random() * 5; //variable Zahl bis 5
-    let w: number = 0;//um das Spiel zu gewinnen
+    let w: number = 0;
     let n: number = 0;
 
     window.addEventListener("load", init);
@@ -63,6 +63,7 @@ namespace Abschlussarbeit {
             let gapx: number = Math.abs(r.momentaryX - findPositionx);
             let gapy: number = Math.abs(r.momentaryY - findPositiony);
             if (gapx <= 20 && gapy <= 20) {
+                w++;
                 rain.splice(i, 1);//entfernt Regentropfen aus dem Array, somit wird er gelöscht
                 rain.reverse();
             }
@@ -105,8 +106,9 @@ namespace Abschlussarbeit {
 
     //Spieler gewinnt das Spiel bei 40 Klicks
     function wonGame(): void {
-        if (w > 39) {
-            alert("Glueckwunsch du hast die gewuenschte Anzahl an Regen entfernt und gewonnen!\nUm es noch mal zu spielen, druecke F5 oder aktualisiere das Programm.");
+        if (w > 7) {
+            alert("Glueckwunsch du hast die gewuenschte Anzahl an Regentropfen entfernt und gewonnen!\nUm es nochmal zu spielen, druecke auf ok.");
+            location.reload();//Spiel wird neu geladen
         }
     }
 
@@ -122,12 +124,12 @@ namespace Abschlussarbeit {
 
     //Erklärung des Spiels
     function explainGame(): void {
-        alert("Rette die Schneelandschaft, indem du die Regentropfen durch clicken zerstoerst. \nAchtung, die Regentropfen duerfen nicht den Boden beruehren!");
+        alert("Rette die Schneelandschaft, indem du die Regentropfen durch klicken zerstoerst. \nAchtung, die Regentropfen duerfen nicht den Boden beruehren!");
     }
 
     //Meldung das Spiel verlohren ist
     function gameLost(): void {
-        alert("Oh nein, du hast leider die Schneelandschaft nicht retten koennen.\nUm es nochmal zu probieren, druecke ok.");
+        alert("Oh nein, du hast leider die Schneelandschaft nicht retten koennen.\nUm es nochmal zu probieren, druecke auf ok.");
         location.reload();//Spiel wird neu geladen
     }
 }

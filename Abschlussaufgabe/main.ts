@@ -63,6 +63,7 @@ namespace Abschlussarbeit {
             let gapx: number = Math.abs(r.momentaryX - findPositionx);
             let gapy: number = Math.abs(r.momentaryY - findPositiony);
             if (gapx <= 20 && gapy <= 20) {
+                r.clicks++;
                 w++;
                 rain.splice(i, 1);//entfernt Regentropfen aus dem Array, somit wird er gelöscht
                 rain.reverse();

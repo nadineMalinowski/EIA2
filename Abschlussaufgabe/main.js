@@ -45,6 +45,7 @@ var Abschlussarbeit;
             let gapx = Math.abs(r.momentaryX - findPositionx);
             let gapy = Math.abs(r.momentaryY - findPositiony);
             if (gapx <= 20 && gapy <= 20) {
+                r.clicks++;
                 w++;
                 Abschlussarbeit.rain.splice(i, 1); //entfernt Regentropfen aus dem Array, somit wird er gel�scht
                 Abschlussarbeit.rain.reverse();

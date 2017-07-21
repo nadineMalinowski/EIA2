@@ -12,9 +12,11 @@ namespace Abschlussarbeit {
         y: number;
         momentaryX: number;
         momentaryY: number;
+        clicks: number;
 
         constructor() {
             this.startPosition();
+            this.clicks = 0;
         }
 
         update(): void {

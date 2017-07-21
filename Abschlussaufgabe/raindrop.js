@@ -9,6 +9,7 @@ var Abschlussarbeit;
     class raindrop {
         constructor() {
             this.startPosition();
+            this.clicks = 0;
         }
         update() {
             this.move();
